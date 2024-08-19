@@ -1,0 +1,51 @@
+1. 注册与创建仓库
+
+注册账户：首先，访问GitHub官网（https://github.com/），注册一个账户。
+创建仓库：登录后，点击页面右上角的“+”号，选择“New repository”。根据提示填写仓库名称、描述等信息，选择公开或私有仓库。创建成功后，会跳转到仓库主页。
+
+2. 本地仓库与GitHub关联
+
+安装Git：在官网下载Git安装包，按照提示安装。
+初始化本地仓库：在本地创建一个文件夹，打开命令行，进入该文件夹，执行git init命令初始化一个本地Git仓库。
+关联远程仓库：在GitHub仓库页面找到“Quick setup”部分的命令，通常是git remote add origin git@github.com:username/repositoryname.git。在本地仓库执行这条命令，将本地仓库与远程仓库关联。
+
+3. 常用Git命令
+
+git add .：将当前目录下的所有文件添加到暂存区。
+git commit -m "提交信息"：将暂存区的文件提交到本地仓库，并附上提交信息。
+git push origin master：将本地仓库的提交推送到远程仓库的master分支。
+git pull origin master：从远程仓库的master分支拉取最新代码并合并到本地。
+git branch：查看本地所有分支。
+git branch new_branch：创建新分支。
+git checkout new_branch：切换到新分支。
+git merge branch_name：将指定分支合并到当前分支。
+
+4. 分支管理
+
+创建分支：git checkout -b feature_branch，这会创建并切换到名为feature_branch的新分支。
+合并分支：完成某个功能开发后，切换回主分支git checkout master，然后执行git merge feature_branch将功能分支合并到主分支。
+删除分支：合并后若不再需要该功能分支，可以使用git branch -d feature_branch删除。
+
+5. 解决冲突
+
+在多人协作开发时，可能会遇到代码冲突。当执行git pull或git merge时，如果出现冲突，需要手动编辑冲突文件，解决冲突后再次提交。
+
+6. Issues与Pull Request
+
+Issues：用于报告问题、讨论功能等。在仓库页面点击“Issues”可以创建新的Issue。
+Pull Request (PR)：当你在自己的分支上完成了一些功能，希望合并到主分支时，可以发起一个Pull Request。在GitHub上比较两个分支的差异，并描述你的更改，等待项目维护者审核并合并。
+
+7. 克隆仓库
+
+git clone git@github.com:username/repositoryname.git：将远程仓库克隆到本地。
+
+8. 标签管理
+
+git tag v1.0：创建标签。
+git push origin v1.0：将标签推送到远程仓库。
+git tag：查看所有标签。
+
+9. 常见问题
+
+SSH配置：首次使用GitHub时，需要配置SSH Key。在本地生成SSH Key后，将公钥添加到GitHub账户的SSH Keys中。
+权限问题：如果推送失败，可能是权限问题，检查SSH Key是否正确配置，或者使用HTTPS方式推送。
