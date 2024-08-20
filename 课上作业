@@ -1,0 +1,33 @@
+#include <stdio.h>
+ 
+int main() {
+    float num1, num2;
+    char operator;
+ 
+    printf("请输入两个数字和一个运算符（+，-，*，/）: ");
+    scanf("%f%c%f", &num1, &operator, &num2);
+ 
+    switch (operator) {
+        case '+':
+            printf("结果: %f\n", num1 + num2);
+            break;
+        case '-':
+            printf("结果: %f\n", num1 - num2);
+            break;
+        case '*':
+            printf("结果: %f\n", num1 * num2);
+            break;
+        case '/':
+            if (num2 == 0) {
+                printf("错误: 除数不能为0\n");
+            } else {
+                printf("结果: %f\n", num1 / num2);
+            }
+            break;
+        default:
+            printf("错误: 无效运算符\n");
+            break;
+    }
+ 
+    return 0;
+}
